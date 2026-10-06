@@ -1,0 +1,1054 @@
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f4f7f5;
+
+    color: #26352f;
+
+}
+
+
+/* =========================================
+   ELEMENTOS GENERALES
+========================================= */
+
+button,
+a,
+input,
+textarea,
+select {
+    transition:
+        transform 0.20s ease,
+        box-shadow 0.20s ease,
+        background-color 0.20s ease,
+        border-color 0.20s ease;
+}
+
+
+button {
+    cursor: pointer;
+}
+
+
+label {
+
+    display: block;
+
+    font-weight: bold;
+
+    margin-top: 18px;
+
+    margin-bottom: 7px;
+
+    color: #34483f;
+
+}
+
+
+input,
+textarea,
+select {
+
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border:
+        1px solid #cddbd4;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #26352f;
+
+    font-size: 15px;
+
+    font-family: inherit;
+
+    outline: none;
+
+}
+
+
+input:focus,
+textarea:focus,
+select:focus {
+
+    border-color: #5c8f78;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(92, 143, 120, 0.15);
+
+}
+
+
+textarea {
+    resize: vertical;
+}
+
+
+/* =========================================
+   ANIMACIÓN POP
+========================================= */
+
+.primary-button:hover,
+.secondary-button:hover,
+.logout:hover,
+.login-card button:hover {
+
+    transform:
+        translateY(-2px)
+        scale(1.06);
+
+}
+
+
+.primary-button:active,
+.secondary-button:active,
+.logout:active,
+.login-card button:active {
+
+    transform:
+        translateY(0)
+        scale(0.97);
+
+}
+
+
+/* =========================================
+   LOGIN
+========================================= */
+
+.login-body {
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            135deg,
+            #294f43,
+            #5f907c,
+            #a9c9b8
+        );
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+}
+
+
+.login-container {
+
+    width: 100%;
+
+    max-width: 420px;
+
+}
+
+
+.login-card {
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.97
+        );
+
+    padding: 40px;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 20px 60px
+        rgba(31, 65, 53, 0.25);
+
+}
+
+
+.login-icon {
+
+    width: 65px;
+
+    height: 65px;
+
+    background: #dcebe3;
+
+    color: #315f50;
+
+    border-radius: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    margin-bottom: 20px;
+
+}
+
+
+.login-card h1 {
+
+    margin-top: 0;
+
+    margin-bottom: 7px;
+
+    color: #28493e;
+
+    font-size: 28px;
+
+}
+
+
+.subtitle {
+
+    color: #6e8178;
+
+    margin-top: 0;
+
+    margin-bottom: 30px;
+
+    line-height: 1.5;
+
+}
+
+
+.login-card button {
+
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #487b67;
+
+    color: white;
+
+    font-weight: bold;
+
+    font-size: 16px;
+
+    box-shadow:
+        0 5px 15px
+        rgba(72, 123, 103, 0.22);
+
+}
+
+
+.login-card button:hover {
+
+    background: #396b58;
+
+    box-shadow:
+        0 9px 22px
+        rgba(72, 123, 103, 0.30);
+
+}
+
+
+.error {
+
+    margin-top: 18px;
+
+    padding: 11px;
+
+    border-radius: 9px;
+
+    background: #f8dddd;
+
+    color: #8f3434;
+
+    text-align: center;
+
+    font-size: 14px;
+
+}
+
+
+.security {
+
+    text-align: center;
+
+    color: #7a8b83;
+
+    font-size: 13px;
+
+    margin-top: 22px;
+
+}
+
+
+/* =========================================
+   BARRA SUPERIOR
+========================================= */
+
+.topbar {
+
+    background: #28493e;
+
+    color: white;
+
+    padding: 18px 5%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    box-shadow:
+        0 4px 14px
+        rgba(26, 55, 45, 0.15);
+
+}
+
+
+.topbar h1 {
+
+    margin: 0;
+
+    font-size: 26px;
+
+}
+
+
+.topbar > div > span {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color: #c8ddd2;
+
+}
+
+
+.top-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+}
+
+
+.top-actions span {
+
+    color: #deebe5;
+
+}
+
+
+.logout {
+
+    background: #a65353;
+
+    color: white;
+
+    padding: 10px 15px;
+
+    border-radius: 9px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 4px 12px
+        rgba(116, 52, 52, 0.18);
+
+}
+
+
+.logout:hover {
+
+    background: #914747;
+
+    box-shadow:
+        0 7px 17px
+        rgba(116, 52, 52, 0.28);
+
+}
+
+
+/* =========================================
+   CONTENEDOR PRINCIPAL
+========================================= */
+
+.container {
+
+    width: 92%;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 40px 0 70px;
+
+}
+
+
+/* =========================================
+   ENCABEZADO PRINCIPAL
+========================================= */
+
+.hero {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.eyebrow {
+
+    color: #52826e;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.hero h2 {
+
+    font-size: 31px;
+
+    margin: 5px 0;
+
+    color: #29493e;
+
+}
+
+
+.muted {
+
+    color: #71837a;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================
+   BOTONES
+========================================= */
+
+.primary-button {
+
+    display: inline-block;
+
+    background: #487b67;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 13px 19px;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 5px 14px
+        rgba(72, 123, 103, 0.20);
+
+}
+
+
+.primary-button:hover {
+
+    background: #396b58;
+
+    box-shadow:
+        0 9px 22px
+        rgba(72, 123, 103, 0.30);
+
+}
+
+
+.secondary-button {
+
+    display: inline-block;
+
+    background: #e1ece6;
+
+    color: #376551;
+
+    border:
+        1px solid #bfd3c8;
+
+    border-radius: 10px;
+
+    padding: 13px 19px;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+}
+
+
+.secondary-button:hover {
+
+    background: #d4e5dc;
+
+    box-shadow:
+        0 8px 18px
+        rgba(75, 112, 95, 0.18);
+
+}
+
+
+/* =========================================
+   ACCIONES
+========================================= */
+
+.actions {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* =========================================
+   ESTADÍSTICAS
+========================================= */
+
+.stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.stat {
+
+    background: #ffffff;
+
+    padding: 22px;
+
+    border:
+        1px solid #e2ebe6;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 6px 20px
+        rgba(50, 76, 65, 0.07);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.stat:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 26px
+        rgba(50, 76, 65, 0.11);
+
+}
+
+
+.stat span {
+
+    color: #71837a;
+
+}
+
+
+.stat strong {
+
+    display: block;
+
+    font-size: 30px;
+
+    margin-top: 8px;
+
+    color: #315f50;
+
+}
+
+
+/* =========================================
+   TARJETAS DE PACIENTES
+========================================= */
+
+.phones {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+
+}
+
+
+.phone-card {
+
+    background: #ffffff;
+
+    border:
+        1px solid #e1ebe5;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 7px 24px
+        rgba(44, 72, 60, 0.08);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+}
+
+
+.phone-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 13px 30px
+        rgba(44, 72, 60, 0.13);
+
+}
+
+
+.phone-image {
+
+    height: 220px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #e9f1ed,
+            #f5f8f6
+        );
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+
+}
+
+
+.phone-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+.no-photo {
+
+    color: #7c9187;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    text-align: center;
+
+}
+
+
+.phone-content {
+
+    padding: 21px;
+
+}
+
+
+.phone-content h3 {
+
+    font-size: 22px;
+
+    margin: 12px 0;
+
+    color: #29493e;
+
+}
+
+
+.phone-content p {
+
+    color: #687b72;
+
+    line-height: 1.5;
+
+    margin: 9px 0;
+
+}
+
+
+.phone-content p strong {
+
+    color: #40584d;
+
+}
+
+
+.status {
+
+    display: inline-block;
+
+    padding: 6px 11px;
+
+    border-radius: 20px;
+
+    background: #dcebe3;
+
+    color: #376551;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+}
+
+
+.price {
+
+    margin-top: 16px;
+
+    padding-top: 13px;
+
+    border-top:
+        1px solid #e5ece8;
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    color: #315f50;
+
+}
+
+
+/* =========================================
+   MENSAJE SIN CITAS
+========================================= */
+
+.empty {
+
+    grid-column: 1 / -1;
+
+    background: #ffffff;
+
+    border:
+        1px dashed #bdcec5;
+
+    border-radius: 16px;
+
+    padding: 40px 20px;
+
+    text-align: center;
+
+    color: #71837a;
+
+}
+
+
+.empty h3 {
+
+    color: #3b5d4e;
+
+    margin-top: 0;
+
+}
+
+
+/* =========================================
+   REGISTRO DE NUEVA CITA
+========================================= */
+
+.new-equipment {
+
+    background: #ffffff;
+
+    margin-top: 40px;
+
+    padding: 32px;
+
+    border:
+        1px solid #e1ebe5;
+
+    border-radius: 19px;
+
+    box-shadow:
+        0 7px 25px
+        rgba(44, 72, 60, 0.07);
+
+}
+
+
+.new-equipment h2 {
+
+    margin-top: 0;
+
+    color: #29493e;
+
+}
+
+
+.section-title {
+
+    margin-bottom: 20px;
+
+}
+
+
+.equipment-form {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 10px 22px;
+
+}
+
+
+.full {
+
+    grid-column:
+        1 / -1;
+
+}
+
+
+/* =========================================
+   INPUT DE ARCHIVO
+========================================= */
+
+input[type="file"] {
+
+    background: #f7faf8;
+
+    border:
+        1px dashed #b8ccc1;
+
+    padding: 13px;
+
+}
+
+
+input[type="file"]:hover {
+
+    border-color: #6e9a86;
+
+    background: #f0f6f2;
+
+}
+
+
+/* =========================================
+   SELECCIÓN DE TEXTO
+========================================= */
+
+::selection {
+
+    background: #b8d4c6;
+
+    color: #203d32;
+
+}
+
+
+/* =========================================
+   RESPONSIVE - TABLET
+========================================= */
+
+@media (max-width: 800px) {
+
+    .phones {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+
+    .stats {
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE - CELULAR
+========================================= */
+
+@media (max-width: 600px) {
+
+    .topbar,
+    .hero {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .top-actions {
+
+        width: 100%;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .logout {
+
+        width: 100%;
+
+        text-align: center;
+
+    }
+
+
+    .hero .primary-button {
+
+        width: 100%;
+
+        text-align: center;
+
+    }
+
+
+    .stats,
+    .phones,
+    .equipment-form {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .full {
+
+        grid-column: auto;
+
+    }
+
+
+    .new-equipment {
+
+        padding: 22px;
+
+    }
+
+
+    .login-card {
+
+        padding: 28px;
+
+    }
+
+
+    .actions {
+
+        flex-direction: column;
+
+    }
+
+
+    .actions a {
+
+        text-align: center;
+
+    }
+
+}

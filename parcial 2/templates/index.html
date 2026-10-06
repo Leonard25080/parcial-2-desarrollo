@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Veterinaria Tlacua
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<!-- BARRA SUPERIOR -->
+
+<header class="topbar">
+
+    <div>
+
+        <h1>
+            Veterinaria Tlacua
+        </h1>
+
+        <span>
+            Control de citas y pacientes
+        </span>
+
+    </div>
+
+
+    <div class="top-actions">
+
+        <span>
+
+            Bienvenido,
+            <strong>
+                {{ usuario }}
+            </strong>
+
+        </span>
+
+
+        <a
+            href="{{ url_for('logout') }}"
+            class="logout"
+        >
+
+            Cerrar sesión
+
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<main class="container">
+
+
+    <!-- ENCABEZADO -->
+
+    <section class="hero">
+
+
+        <div>
+
+            <p class="eyebrow">
+                PANEL PRINCIPAL
+            </p>
+
+            <h2>
+                Citas de pacientes
+            </h2>
+
+            <p class="muted">
+
+                Consulta y administra las citas
+                de los pacientes de la veterinaria.
+
+            </p>
+
+        </div>
+
+
+        <a
+            href="#nueva-cita"
+            class="primary-button"
+        >
+
+            + Registrar nueva cita
+
+        </a>
+
+
+    </section>
+
+
+
+    <!-- ESTADÍSTICAS -->
+
+    <section class="stats">
+
+
+        <div class="stat">
+
+            <span>
+                Citas registradas
+            </span>
+
+            <strong>
+                {{ citas|length }}
+            </strong>
+
+        </div>
+
+
+        <div class="stat">
+
+            <span>
+                Pacientes registrados
+            </span>
+
+            <strong>
+                {{ citas|length }}
+            </strong>
+
+        </div>
+
+
+        <div class="stat">
+
+            <span>
+                Usuario activo
+            </span>
+
+            <strong>
+                {{ usuario }}
+            </strong>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ACCIONES -->
+
+    <section class="actions">
+
+        <a
+            href="#nueva-cita"
+            class="primary-button"
+        >
+            + Nueva cita
+        </a>
+
+        <a
+        href="{{ url_for('exportar_excel') }}"
+        class="secondary-button"
+    >
+        Exportar a Excel
+    </a>
+
+    </section>
+
+
+
+    <!-- CITAS REGISTRADAS -->
+
+    <section class="phones">
+
+
+        {% for cita in citas %}
+
+
+        <article class="phone-card">
+
+
+            <!-- FOTO DE LA MASCOTA -->
+
+            <div class="phone-image">
+
+                {% if cita.foto %}
+
+                <img
+                    src="{{ url_for(
+                        'foto',
+                        nombre=cita.foto
+                    ) }}"
+                    alt="Fotografía de {{ cita.nombre }}"
+                >
+
+                {% else %}
+
+                <div class="no-photo">
+                    Sin fotografía
+                </div>
+
+                {% endif %}
+
+            </div>
+
+
+
+            <!-- INFORMACIÓN DE LA CITA -->
+
+            <div class="phone-content">
+
+
+                <span class="status">
+
+                    {{ cita.tipo }}
+
+                </span>
+
+
+                <h3>
+
+                    {{ cita.nombre }}
+
+                </h3>
+
+
+                <p>
+
+                    <strong>
+                        Tipo de animal:
+                    </strong>
+
+                    {{ cita.tipo }}
+
+                </p>
+
+
+                <p>
+
+                    <strong>
+                        Servicio:
+                    </strong>
+
+                    {{ cita.servicio }}
+
+                </p>
+
+
+                <p>
+
+                    <strong>
+                        Fecha:
+                    </strong>
+
+                    {{ cita.fecha }}
+
+                </p>
+
+
+                <p>
+
+                    <strong>
+                        Hora:
+                    </strong>
+
+                    {{ cita.hora }}
+
+                </p>
+
+
+                <div class="price">
+
+                    ${{ cita.costo }}
+
+                </div>
+
+
+            </div>
+
+
+        </article>
+
+
+        {% else %}
+
+
+        <!-- CUANDO NO HAY CITAS -->
+
+        <div class="empty">
+
+            <h3>
+                No hay citas registradas
+            </h3>
+
+            <p>
+                Registra la primera cita de un paciente.
+            </p>
+
+        </div>
+
+
+        {% endfor %}
+
+
+    </section>
+
+
+
+    <!-- REGISTRAR NUEVA CITA -->
+
+    <section
+        id="nueva-cita"
+        class="new-equipment"
+    >
+
+
+        <div class="section-title">
+
+
+            <p class="eyebrow">
+                REGISTRO
+            </p>
+
+
+            <h2>
+                Registrar nueva cita
+            </h2>
+
+
+            <p class="muted">
+
+                Ingresa la información de la mascota
+                y los datos de su cita.
+
+            </p>
+
+
+        </div>
+
+
+
+        <form
+            method="POST"
+            action="{{ url_for('nueva_cita') }}"
+            enctype="multipart/form-data"
+            class="equipment-form"
+        >
+
+
+            <!-- NOMBRE -->
+
+            <div>
+
+                <label>
+                    Nombre de la mascota
+                </label>
+
+                <input
+                    type="text"
+                    name="nombre"
+                    placeholder="Ej. Max"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- TIPO DE ANIMAL -->
+
+            <div>
+
+                <label>
+                    Tipo de animal
+                </label>
+
+                <select
+                    name="tipo"
+                    required
+                >
+
+                    <option value="">
+                        Selecciona un tipo
+                    </option>
+
+                    <option value="Perro">
+                        Perro
+                    </option>
+
+                    <option value="Gato">
+                        Gato
+                    </option>
+
+                    <option value="Ave">
+                        Ave
+                    </option>
+
+                    <option value="Conejo">
+                        Conejo
+                    </option>
+
+                    <option value="Otro">
+                        Otro
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- SERVICIO -->
+
+            <div>
+
+                <label>
+                    Servicio
+                </label>
+
+                <select
+                    name="servicio"
+                    required
+                >
+
+                    <option value="">
+                        Selecciona un servicio
+                    </option>
+
+                    <option value="Consulta general">
+                        Consulta general
+                    </option>
+
+                    <option value="Vacunación">
+                        Vacunación
+                    </option>
+
+                    <option value="Desparasitación">
+                        Desparasitación
+                    </option>
+
+                    <option value="Estética">
+                        Estética
+                    </option>
+
+                    <option value="Cirugía">
+                        Cirugía
+                    </option>
+
+                    <option value="Emergencia">
+                        Emergencia
+                    </option>
+
+                    <option value="Otro">
+                        Otro
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- COSTO -->
+
+            <div>
+
+                <label>
+                    Costo del servicio
+                </label>
+
+                <input
+                    type="number"
+                    name="costo"
+                    min="0"
+                    step="0.01"
+                    placeholder="0.00"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- FECHA -->
+
+            <div>
+
+                <label>
+                    Fecha de la cita
+                </label>
+
+                <input
+                    type="date"
+                    name="fecha"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- HORA -->
+
+            <div>
+
+                <label>
+                    Hora de la cita
+                </label>
+
+                <input
+                    type="time"
+                    name="hora"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- FOTO -->
+
+            <div class="full">
+
+                <label>
+                    Fotografía de la mascota
+                </label>
+
+                <input
+                    type="file"
+                    name="foto"
+                    accept=".png,.jpg,.jpeg,.webp"
+                >
+
+            </div>
+
+
+
+            <!-- BOTÓN -->
+
+            <div class="full">
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+
+                    Registrar cita
+
+                </button>
+
+            </div>
+
+
+        </form>
+
+
+    </section>
+
+
+</main>
+
+
+</body>
+
+</html>

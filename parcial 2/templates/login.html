@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Acceso | Veterinaria Tlacua
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body class="login-body">
+
+
+<div class="login-container">
+
+    <div class="login-card">
+
+
+        <div class="login-icon">
+            VT
+        </div>
+
+
+        <h1>
+            Veterinaria Tlacua
+        </h1>
+
+
+        <p class="subtitle">
+            Sistema de control de citas y pacientes
+        </p>
+
+
+        <form method="POST">
+
+
+            <label>
+                Usuario
+            </label>
+
+            <input
+                type="text"
+                name="username"
+                placeholder="Escribe tu usuario"
+                required
+                autocomplete="username"
+            >
+
+
+            <label>
+                Contraseña
+            </label>
+
+            <input
+                type="password"
+                name="password"
+                placeholder="Escribe tu contraseña"
+                required
+                autocomplete="current-password"
+            >
+
+
+            <button type="submit">
+
+                Iniciar sesión
+
+            </button>
+
+
+        </form>
+
+
+        {% if error %}
+
+        <div class="error">
+
+            {{ error }}
+
+        </div>
+
+        {% endif %}
+
+
+        <p class="security">
+
+            Acceso protegido para empleados
+
+        </p>
+
+
+    </div>
+
+</div>
+
+
+</body>
+
+</html>

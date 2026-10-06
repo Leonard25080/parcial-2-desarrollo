@@ -1,0 +1,112 @@
+[
+    {
+        "nombre": "Max",
+        "tipo": "Perro",
+        "servicio": "Consulta general",
+        "fecha": "2026-10-07",
+        "hora": "09:00",
+        "costo": 450.0,
+        "foto": "mascota1.png",
+        "registrado_por": "Empleado 1"
+    },
+    {
+        "nombre": "Rocky",
+        "tipo": "Perro",
+        "servicio": "Emergencia",
+        "fecha": "2026-10-07",
+        "hora": "10:30",
+        "costo": 850.0,
+        "foto": "mascota2.png",
+        "registrado_por": "Empleado 2"
+    },
+    {
+        "nombre": "Bruno",
+        "tipo": "Perro",
+        "servicio": "Consulta general",
+        "fecha": "2026-10-07",
+        "hora": "12:00",
+        "costo": 500.0,
+        "foto": "mascota3.png",
+        "registrado_por": "Empleado 1"
+    },
+    {
+        "nombre": "Luna",
+        "tipo": "Gato",
+        "servicio": "Consulta general",
+        "fecha": "2026-10-08",
+        "hora": "09:30",
+        "costo": 400.0,
+        "foto": "mascota4.png",
+        "registrado_por": "Empleado 2"
+    },
+    {
+        "nombre": "Nube",
+        "tipo": "Gato",
+        "servicio": "Vacunación",
+        "fecha": "2026-10-08",
+        "hora": "11:00",
+        "costo": 350.0,
+        "foto": "mascota5.png",
+        "registrado_por": "Empleado 1"
+    },
+    {
+        "nombre": "Milo",
+        "tipo": "Gato",
+        "servicio": "Desparasitación",
+        "fecha": "2026-10-08",
+        "hora": "13:30",
+        "costo": 300.0,
+        "foto": "mascota6.png",
+        "registrado_por": "Empleado 2"
+    },
+    {
+        "nombre": "Paco",
+        "tipo": "Ave",
+        "servicio": "Consulta general",
+        "fecha": "2026-10-09",
+        "hora": "09:00",
+        "costo": 450.0,
+        "foto": "mascota7.png",
+        "registrado_por": "Empleado 1"
+    },
+    {
+        "nombre": "Kiwi",
+        "tipo": "Ave",
+        "servicio": "Emergencia",
+        "fecha": "2026-10-09",
+        "hora": "10:30",
+        "costo": 700.0,
+        "foto": "mascota8.png",
+        "registrado_por": "Empleado 2"
+    },
+    {
+        "nombre": "Coco",
+        "tipo": "Ave",
+        "servicio": "Consulta general",
+        "fecha": "2026-10-09",
+        "hora": "12:30",
+        "costo": 400.0,
+        "foto": "mascota9.png",
+        "registrado_por": "Empleado 1"
+    },
+    {
+        "nombre": "Loro",
+        "tipo": "Ave",
+        "servicio": "Consulta general",
+        "fecha": "2026-10-10",
+        "hora": "11:30",
+        "costo": 450.0,
+        "foto": "mascota10.png",
+        "registrado_por": "Empleado 2"
+    },
+    {
+        "nombre": "tayson",
+        "tipo": "Perro",
+        "servicio": "Emergencia",
+        "fecha": "2026-10-06",
+        "hora": "17:31",
+        "costo": 600.0,
+        "foto": "moquillo.png",
+        "registrado_por": "Dulce_Hernandez"
+    }
+]
